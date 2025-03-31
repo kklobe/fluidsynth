@@ -78,343 +78,343 @@ static const fluid_cmd_t fluid_commands[] =
 {
     /* general commands */
     {
-        "help", "general", fluid_handle_help,
-        "help                       Shows help topics ('help TOPIC' for more info)"
+        const_cast<char *>("help"), const_cast<char *>("general"), fluid_handle_help,
+        const_cast<char *>("help                       Shows help topics ('help TOPIC' for more info)")
     },
     {
-        "quit", "general", fluid_handle_quit,
-        "quit                       Quit the synthesizer"
+        const_cast<char *>("quit"), const_cast<char *>("general"), fluid_handle_quit,
+        const_cast<char *>("quit                       Quit the synthesizer")
     },
     {
-        "source", "general", fluid_handle_source,
-        "source filename            Loads a file and parse every line as a command"
+        const_cast<char *>("source"), const_cast<char *>("general"), fluid_handle_source,
+        const_cast<char *>("source filename            Loads a file and parse every line as a command")
     },
     /* event commands */
     {
-        "noteon", "event", fluid_handle_noteon,
-        "noteon chan key vel        Sends noteon"
+        const_cast<char *>("noteon"), const_cast<char *>("event"), fluid_handle_noteon,
+        const_cast<char *>("noteon chan key vel        Sends noteon")
     },
     {
-        "noteoff", "event", fluid_handle_noteoff,
-        "noteoff chan key           Sends noteoff"
+        const_cast<char *>("noteoff"), const_cast<char *>("event"), fluid_handle_noteoff,
+        const_cast<char *>("noteoff chan key           Sends noteoff")
     },
     {
-        "pitch_bend", "event", fluid_handle_pitch_bend,
-        "pitch_bend chan offset     Bends pitch"
+        const_cast<char *>("pitch_bend"), const_cast<char *>("event"), fluid_handle_pitch_bend,
+        const_cast<char *>("pitch_bend chan offset     Bends pitch")
     },
     {
-        "pitch_bend_range", "event", fluid_handle_pitch_bend_range,
-        "pitch_bend_range chn range Sets pitch bend range for the given midi channel"
+        const_cast<char *>("pitch_bend_range"), const_cast<char *>("event"), fluid_handle_pitch_bend_range,
+        const_cast<char *>("pitch_bend_range chn range Sets pitch bend range for the given midi channel")
     },
     {
-        "cc", "event", fluid_handle_cc,
-        "cc chan ctrl value         Sends control-change message"
+        const_cast<char *>("cc"), const_cast<char *>("event"), fluid_handle_cc,
+        const_cast<char *>("cc chan ctrl value         Sends control-change message")
     },
     {
-        "prog", "event", fluid_handle_prog,
-        "prog chan num              Sends program-change message"
+        const_cast<char *>("prog"), const_cast<char *>("event"), fluid_handle_prog,
+        const_cast<char *>("prog chan num              Sends program-change message")
     },
     {
-        "select", "event", fluid_handle_select,
-        "select chan sfont bank prog  Combination of bank-select and program-change"
+        const_cast<char *>("select"), const_cast<char *>("event"), fluid_handle_select,
+        const_cast<char *>("select chan sfont bank prog  Combination of bank-select and program-change")
     },
     {
-        "load", "general", fluid_handle_load,
-        "load file [reset] [bankofs] Loads SoundFont (reset=0|1, def=1; bankofs=n, n!=0)"
+        const_cast<char *>("load"), const_cast<char *>("general"), fluid_handle_load,
+        const_cast<char *>("load file [reset] [bankofs] Loads SoundFont (reset=0|1, def=1; bankofs=n, n!=0)")
     },
     {
-        "unload", "general", fluid_handle_unload,
-        "unload id [reset]          Unloads SoundFont by ID (reset=0|1, default 1)"
+        const_cast<char *>("unload"), const_cast<char *>("general"), fluid_handle_unload,
+        const_cast<char *>("unload id [reset]          Unloads SoundFont by ID (reset=0|1, default 1)")
     },
     {
-        "reload", "general", fluid_handle_reload,
-        "reload id                  Reload the SoundFont with the specified ID"
+        const_cast<char *>("reload"), const_cast<char *>("general"), fluid_handle_reload,
+        const_cast<char *>("reload id                  Reload the SoundFont with the specified ID")
     },
     {
-        "fonts", "general", fluid_handle_fonts,
-        "fonts                      Display the list of loaded SoundFonts"
+        const_cast<char *>("fonts"), const_cast<char *>("general"), fluid_handle_fonts,
+        const_cast<char *>("fonts                      Display the list of loaded SoundFonts")
     },
     {
-        "inst", "general", fluid_handle_inst,
-        "inst font                  Print out the available instruments for the font"
+        const_cast<char *>("inst"), const_cast<char *>("general"), fluid_handle_inst,
+        const_cast<char *>("inst font                  Print out the available instruments for the font")
     },
     {
-        "channels", "general", fluid_handle_channels,
-        "channels [-verbose]        Print out preset of all channels"
+        const_cast<char *>("channels"), const_cast<char *>("general"), fluid_handle_channels,
+        const_cast<char *>("channels [-verbose]        Print out preset of all channels")
     },
     {
-        "interp", "general", fluid_handle_interp,
-        "interp num                 Choose interpolation method for all channels"
+        const_cast<char *>("interp"), const_cast<char *>("general"), fluid_handle_interp,
+        const_cast<char *>("interp num                 Choose interpolation method for all channels")
     },
     {
-        "interpc", "general", fluid_handle_interpc,
-        "interpc chan num           Choose interpolation method for one channel"
+        const_cast<char *>("interpc"), const_cast<char *>("general"), fluid_handle_interpc,
+        const_cast<char *>("interpc chan num           Choose interpolation method for one channel")
     },
     /* polymono commands */
     {
-        "basicchannels", "polymono", fluid_handle_basicchannels,
-        "basicchannels                         Prints the list of basic channels"
+        const_cast<char *>("basicchannels"), const_cast<char *>("polymono"), fluid_handle_basicchannels,
+        const_cast<char *>("basicchannels                         Prints the list of basic channels")
     },
     {
-        "resetbasicchannels", "polymono", fluid_handle_resetbasicchannels,
-        "resetbasicchannels [chan1 chan2..]    Resets all or some basic channels"
+        const_cast<char *>("resetbasicchannels"), const_cast<char *>("polymono"), fluid_handle_resetbasicchannels,
+        const_cast<char *>("resetbasicchannels [chan1 chan2..]    Resets all or some basic channels")
     },
     {
-        "setbasicchannels", "polymono", fluid_handle_setbasicchannels,
-        "setbasicchannels [chan mode val...]   Sets default, adds basic channels"
+        const_cast<char *>("setbasicchannels"), const_cast<char *>("polymono"), fluid_handle_setbasicchannels,
+        const_cast<char *>("setbasicchannels [chan mode val...]   Sets default, adds basic channels")
     },
     {
-        "channelsmode", "polymono", fluid_handle_channelsmode,
-        "channelsmode [chan1 chan2..]          Prints channels mode"
+        const_cast<char *>("channelsmode"), const_cast<char *>("polymono"), fluid_handle_channelsmode,
+        const_cast<char *>("channelsmode [chan1 chan2..]          Prints channels mode")
     },
     {
-        "legatomode", "polymono", fluid_handle_legatomode,
-        "legatomode [chan1 chan2..]            Prints channels legato mode"
+        const_cast<char *>("legatomode"), const_cast<char *>("polymono"), fluid_handle_legatomode,
+        const_cast<char *>("legatomode [chan1 chan2..]            Prints channels legato mode")
     },
     {
-        "setlegatomode", "polymono", fluid_handle_setlegatomode,
-        "setlegatomode chan mode [chan mode..] Sets legato mode"
+        const_cast<char *>("setlegatomode"), const_cast<char *>("polymono"), fluid_handle_setlegatomode,
+        const_cast<char *>("setlegatomode chan mode [chan mode..] Sets legato mode")
     },
     {
-        "portamentomode", "polymono", fluid_handle_portamentomode,
-        "portamentomode [chan1 chan2..]        Prints channels portamento mode"
+        const_cast<char *>("portamentomode"), const_cast<char *>("polymono"), fluid_handle_portamentomode,
+        const_cast<char *>("portamentomode [chan1 chan2..]        Prints channels portamento mode")
     },
     {
-        "setportamentomode", "polymono", fluid_handle_setportamentomode,
-        "setportamentomode chan mode [chan mode..] Sets portamento mode"
+        const_cast<char *>("setportamentomode"), const_cast<char *>("polymono"), fluid_handle_setportamentomode,
+        const_cast<char *>("setportamentomode chan mode [chan mode..] Sets portamento mode")
     },
     {
-        "breathmode", "polymono", fluid_handle_breathmode,
-        "breathmode [chan1 chan2..]            Prints channels breath mode"
+        const_cast<char *>("breathmode"), const_cast<char *>("polymono"), fluid_handle_breathmode,
+        const_cast<char *>("breathmode [chan1 chan2..]            Prints channels breath mode")
     },
     {
-        "setbreathmode", "polymono", fluid_handle_setbreathmode,
-        "setbreathmode chan poly(1/0) mono(1/0) breath_sync(1/0) [..] Sets breath mode"
+        const_cast<char *>("setbreathmode"), const_cast<char *>("polymono"), fluid_handle_setbreathmode,
+        const_cast<char *>("setbreathmode chan poly(1/0) mono(1/0) breath_sync(1/0) [..] Sets breath mode")
     },
     /* reverb commands */
     {
-        "rev_preset", "reverb", fluid_handle_reverbpreset,
-        "rev_preset num              Load preset num into all reverb unit"
+        const_cast<char *>("rev_preset"), const_cast<char *>("reverb"), fluid_handle_reverbpreset,
+        const_cast<char *>("rev_preset num              Load preset num into all reverb unit")
     },
     {
-        "rev_setroomsize", "reverb", fluid_handle_reverbsetroomsize,
-        "rev_setroomsize [group] num Set room size of all or one reverb group to num"
+        const_cast<char *>("rev_setroomsize"), const_cast<char *>("reverb"), fluid_handle_reverbsetroomsize,
+        const_cast<char *>("rev_setroomsize [group] num Set room size of all or one reverb group to num")
     },
     {
-        "rev_setdamp", "reverb", fluid_handle_reverbsetdamp,
-        "rev_setdamp [group] num     Set damping of all or one reverb group to num"
+        const_cast<char *>("rev_setdamp"), const_cast<char *>("reverb"), fluid_handle_reverbsetdamp,
+        const_cast<char *>("rev_setdamp [group] num     Set damping of all or one reverb group to num")
     },
     {
-        "rev_setwidth", "reverb", fluid_handle_reverbsetwidth,
-        "rev_setwidth [group] num    Set width of all or one reverb group to num"
+        const_cast<char *>("rev_setwidth"), const_cast<char *>("reverb"), fluid_handle_reverbsetwidth,
+        const_cast<char *>("rev_setwidth [group] num    Set width of all or one reverb group to num")
     },
     {
-        "rev_setlevel", "reverb", fluid_handle_reverbsetlevel,
-        "rev_setlevel [group] num    Set output level of all or one reverb group to num"
+        const_cast<char *>("rev_setlevel"), const_cast<char *>("reverb"), fluid_handle_reverbsetlevel,
+        const_cast<char *>("rev_setlevel [group] num    Set output level of all or one reverb group to num")
     },
     {
-        "reverb", "reverb", fluid_handle_reverb,
-        "reverb [group] 0|1|on|off   Turn all or one reverb group on or off"
+        const_cast<char *>("reverb"), const_cast<char *>("reverb"), fluid_handle_reverb,
+        const_cast<char *>("reverb [group] 0|1|on|off   Turn all or one reverb group on or off")
     },
     /* chorus commands */
     {
-        "cho_set_nr", "chorus", fluid_handle_chorusnr,
-        "cho_set_nr [group] n        Set n delay lines (default 3) in all or one chorus group"
+        const_cast<char *>("cho_set_nr"), const_cast<char *>("chorus"), fluid_handle_chorusnr,
+        const_cast<char *>("cho_set_nr [group] n        Set n delay lines (default 3) in all or one chorus group")
     },
     {
-        "cho_set_level", "chorus", fluid_handle_choruslevel,
-        "cho_set_level [group] num   Set output level of all or one chorus group to num"
+        const_cast<char *>("cho_set_level"), const_cast<char *>("chorus"), fluid_handle_choruslevel,
+        const_cast<char *>("cho_set_level [group] num   Set output level of all or one chorus group to num")
     },
     {
-        "cho_set_speed", "chorus", fluid_handle_chorusspeed,
-        "cho_set_speed [group] num   Set mod speed of all or one chorus group to num (Hz)"
+        const_cast<char *>("cho_set_speed"), const_cast<char *>("chorus"), fluid_handle_chorusspeed,
+        const_cast<char *>("cho_set_speed [group] num   Set mod speed of all or one chorus group to num (Hz)")
     },
     {
-        "cho_set_depth", "chorus", fluid_handle_chorusdepth,
-        "cho_set_depth [group] num   Set modulation depth of all or one chorus group to num (ms)"
+        const_cast<char *>("cho_set_depth"), const_cast<char *>("chorus"), fluid_handle_chorusdepth,
+        const_cast<char *>("cho_set_depth [group] num   Set modulation depth of all or one chorus group to num (ms)")
     },
     {
-        "chorus", "chorus", fluid_handle_chorus,
-        "chorus [group] 0|1|on|off   Turn all or one chorus group on or off"
+        const_cast<char *>("chorus"), const_cast<char *>("chorus"), fluid_handle_chorus,
+        const_cast<char *>("chorus [group] 0|1|on|off   Turn all or one chorus group on or off")
     },
     {
-        "gain", "general", fluid_handle_gain,
-        "gain value                 Set the master gain (0 < gain < 5)"
+        const_cast<char *>("gain"), const_cast<char *>("general"), fluid_handle_gain,
+        const_cast<char *>("gain value                 Set the master gain (0 < gain < 5)")
     },
     {
-        "voice_count", "general", fluid_handle_voice_count,
-        "voice_count                Get number of active synthesis voices"
+        const_cast<char *>("voice_count"), const_cast<char *>("general"), fluid_handle_voice_count,
+        const_cast<char *>("voice_count                Get number of active synthesis voices")
     },
     /* tuning commands */
     {
-        "tuning", "tuning", fluid_handle_tuning,
-        "tuning name bank prog      Create a tuning with name, bank number, \n"
-        "                           and program number (0 <= bank,prog <= 127)"
+        const_cast<char *>("tuning"), const_cast<char *>("tuning"), fluid_handle_tuning,
+        const_cast<char *>("tuning name bank prog      Create a tuning with name, bank number, \n"
+        "                           and program number (0 <= bank,prog <= 127)")
     },
     {
-        "tune", "tuning", fluid_handle_tune,
-        "tune bank prog key pitch   Tune a key"
+        const_cast<char *>("tune"), const_cast<char *>("tuning"), fluid_handle_tune,
+        const_cast<char *>("tune bank prog key pitch   Tune a key")
     },
     {
-        "settuning", "tuning", fluid_handle_settuning,
-        "settuning chan bank prog   Set the tuning for a MIDI channel"
+        const_cast<char *>("settuning"), const_cast<char *>("tuning"), fluid_handle_settuning,
+        const_cast<char *>("settuning chan bank prog   Set the tuning for a MIDI channel")
     },
     {
-        "resettuning", "tuning", fluid_handle_resettuning,
-        "resettuning chan           Restore the default tuning of a MIDI channel"
+        const_cast<char *>("resettuning"), const_cast<char *>("tuning"), fluid_handle_resettuning,
+        const_cast<char *>("resettuning chan           Restore the default tuning of a MIDI channel")
     },
     {
-        "tunings", "tuning", fluid_handle_tunings,
-        "tunings                    Print the list of available tunings"
+        const_cast<char *>("tunings"), const_cast<char *>("tuning"), fluid_handle_tunings,
+        const_cast<char *>("tunings                    Print the list of available tunings")
     },
     {
-        "dumptuning", "tuning", fluid_handle_dumptuning,
-        "dumptuning bank prog       Print the pitch details of the tuning"
+        const_cast<char *>("dumptuning"), const_cast<char *>("tuning"), fluid_handle_dumptuning,
+        const_cast<char *>("dumptuning bank prog       Print the pitch details of the tuning")
     },
     {
-        "reset", "general", fluid_handle_reset,
-        "reset                      System reset (all notes off, reset controllers)"
+        const_cast<char *>("reset"), const_cast<char *>("general"), fluid_handle_reset,
+        const_cast<char *>("reset                      System reset (all notes off, reset controllers)")
     },
     /* settings commands */
     {
-        "set", "settings", fluid_handle_set,
-        "set name value             Set the value of a setting (must be a real-time setting to take effect immediately)"
+        const_cast<char *>("set"), const_cast<char *>("settings"), fluid_handle_set,
+        const_cast<char *>("set name value             Set the value of a setting (must be a real-time setting to take effect immediately)")
     },
     {
-        "get", "settings", fluid_handle_get,
-        "get name                   Get the value of a setting"
+        const_cast<char *>("get"), const_cast<char *>("settings"), fluid_handle_get,
+        const_cast<char *>("get name                   Get the value of a setting")
     },
     {
-        "info", "settings", fluid_handle_info,
-        "info name                  Get information about a setting"
+        const_cast<char *>("info"), const_cast<char *>("settings"), fluid_handle_info,
+        const_cast<char *>("info name                  Get information about a setting")
     },
     {
-        "settings", "settings", fluid_handle_settings,
-        "settings                   Print out all settings"
+        const_cast<char *>("settings"), const_cast<char *>("settings"), fluid_handle_settings,
+        const_cast<char *>("settings                   Print out all settings")
     },
     {
-        "echo", "general", fluid_handle_echo,
-        "echo arg                   Print arg"
+        const_cast<char *>("echo"), const_cast<char *>("general"), fluid_handle_echo,
+        const_cast<char *>("echo arg                   Print arg")
     },
     /* Sleep command, useful to insert a delay between commands */
     {
-        "sleep", "general", fluid_handle_sleep,
-        "sleep  duration            sleep duration (in ms)"
+        const_cast<char *>("sleep"), const_cast<char *>("general"), fluid_handle_sleep,
+        const_cast<char *>("sleep  duration            sleep duration (in ms)")
     },
     /* LADSPA-related commands */
 #ifdef LADSPA
     {
-        "ladspa_effect", "ladspa", fluid_handle_ladspa_effect,
-        "ladspa_effect              Create a new effect from a LADSPA plugin"
+        const_cast<char *>("ladspa_effect"), const_cast<char *>("ladspa"), fluid_handle_ladspa_effect,
+        const_cast<char *>("ladspa_effect              Create a new effect from a LADSPA plugin")
     },
     {
-        "ladspa_link", "ladspa", fluid_handle_ladspa_link,
-        "ladspa_link                Connect an effect port to a host port or buffer"
+        const_cast<char *>("ladspa_link"), const_cast<char *>("ladspa"), fluid_handle_ladspa_link,
+        const_cast<char *>("ladspa_link                Connect an effect port to a host port or buffer")
     },
     {
-        "ladspa_buffer", "ladspa", fluid_handle_ladspa_buffer,
-        "ladspa_buffer              Create a LADSPA buffer"
+        const_cast<char *>("ladspa_buffer"), const_cast<char *>("ladspa"), fluid_handle_ladspa_buffer,
+        const_cast<char *>("ladspa_buffer              Create a LADSPA buffer")
     },
     {
-        "ladspa_set", "ladspa", fluid_handle_ladspa_set,
-        "ladspa_set                 Set the value of an effect control port"
+        const_cast<char *>("ladspa_set"), const_cast<char *>("ladspa"), fluid_handle_ladspa_set,
+        const_cast<char *>("ladspa_set                 Set the value of an effect control port")
     },
     {
-        "ladspa_check", "ladspa", fluid_handle_ladspa_check,
-        "ladspa_check               Check LADSPA configuration"
+        const_cast<char *>("ladspa_check"), const_cast<char *>("ladspa"), fluid_handle_ladspa_check,
+        const_cast<char *>("ladspa_check               Check LADSPA configuration")
     },
     {
-        "ladspa_start", "ladspa", fluid_handle_ladspa_start,
-        "ladspa_start               Start LADSPA effects"
+        const_cast<char *>("ladspa_start"), const_cast<char *>("ladspa"), fluid_handle_ladspa_start,
+        const_cast<char *>("ladspa_start               Start LADSPA effects")
     },
     {
-        "ladspa_stop", "ladspa", fluid_handle_ladspa_stop,
-        "ladspa_stop                Stop LADSPA effect unit"
+        const_cast<char *>("ladspa_stop"), const_cast<char *>("ladspa"), fluid_handle_ladspa_stop,
+        const_cast<char *>("ladspa_stop                Stop LADSPA effect unit")
     },
     {
-        "ladspa_reset", "ladspa", fluid_handle_ladspa_reset,
-        "ladspa_reset               Stop and reset LADSPA effects"
+        const_cast<char *>("ladspa_reset"), const_cast<char *>("ladspa"), fluid_handle_ladspa_reset,
+        const_cast<char *>("ladspa_reset               Stop and reset LADSPA effects")
     },
 #endif
     /* router commands */
     {
-        "router_clear", "router", fluid_handle_router_clear,
-        "router_clear               Clears all routing rules from the midi router"
+        const_cast<char *>("router_clear"), const_cast<char *>("router"), fluid_handle_router_clear,
+        const_cast<char *>("router_clear               Clears all routing rules from the midi router")
     },
     {
-        "router_default", "router", fluid_handle_router_default,
-        "router_default             Resets the midi router to default state"
+        const_cast<char *>("router_default"), const_cast<char *>("router"), fluid_handle_router_default,
+        const_cast<char *>("router_default             Resets the midi router to default state")
     },
     {
-        "router_begin", "router", fluid_handle_router_begin,
-        "router_begin [note|cc|prog|pbend|cpress|kpress]: Starts a new routing rule"
+        const_cast<char *>("router_begin"), const_cast<char *>("router"), fluid_handle_router_begin,
+        const_cast<char *>("router_begin [note|cc|prog|pbend|cpress|kpress]: Starts a new routing rule")
     },
     {
-        "router_chan", "router", fluid_handle_router_chan,
-        "router_chan min max mul add      filters and maps midi channels on current rule"
+        const_cast<char *>("router_chan"), const_cast<char *>("router"), fluid_handle_router_chan,
+        const_cast<char *>("router_chan min max mul add      filters and maps midi channels on current rule")
     },
     {
-        "router_par1", "router", fluid_handle_router_par1,
-        "router_par1 min max mul add      filters and maps parameter 1 (key/ctrl nr)"
+        const_cast<char *>("router_par1"), const_cast<char *>("router"), fluid_handle_router_par1,
+        const_cast<char *>("router_par1 min max mul add      filters and maps parameter 1 (key/ctrl nr)")
     },
     {
-        "router_par2", "router", fluid_handle_router_par2,
-        "router_par2 min max mul add      filters and maps parameter 2 (vel/cc val)"
+        const_cast<char *>("router_par2"), const_cast<char *>("router"), fluid_handle_router_par2,
+        const_cast<char *>("router_par2 min max mul add      filters and maps parameter 2 (vel/cc val)")
     },
     {
-        "router_end", "router", fluid_handle_router_end,
-        "router_end                 closes and commits the current routing rule"
+        const_cast<char *>("router_end"), const_cast<char *>("router"), fluid_handle_router_end,
+        const_cast<char *>("router_end                 closes and commits the current routing rule")
     },
     /* Midi file player commands */
     {
-        "player_start", "player", fluid_handle_player_start,
-        "player_start               Start playing from the beginning of current song"
+        const_cast<char *>("player_start"), const_cast<char *>("player"), fluid_handle_player_start,
+        const_cast<char *>("player_start               Start playing from the beginning of current song")
     },
     {
-        "player_stop", "player", fluid_handle_player_stop,
-        "player_stop                Stop playing (cannot be executed in a user command file)"
+        const_cast<char *>("player_stop"), const_cast<char *>("player"), fluid_handle_player_stop,
+        const_cast<char *>("player_stop                Stop playing (cannot be executed in a user command file)")
     },
     {
-        "player_cont", "player", fluid_handle_player_continue,
-        "player_cont                Continue playing (cannot be executed in a user command file)"
+        const_cast<char *>("player_cont"), const_cast<char *>("player"), fluid_handle_player_continue,
+        const_cast<char *>("player_cont                Continue playing (cannot be executed in a user command file)")
     },
     {
-        "player_seek", "player", fluid_handle_player_seek,
-        "player_seek num            Move forward/backward in current song to +/-num ticks"
+        const_cast<char *>("player_seek"), const_cast<char *>("player"), fluid_handle_player_seek,
+        const_cast<char *>("player_seek num            Move forward/backward in current song to +/-num ticks")
     },
     {
-        "player_next", "player", fluid_handle_player_next_song,
-        "player_next                Move to next song (cannot be executed in a user command file)"
+        const_cast<char *>("player_next"), const_cast<char *>("player"), fluid_handle_player_next_song,
+        const_cast<char *>("player_next                Move to next song (cannot be executed in a user command file)")
     },
     {
-        "player_loop", "player", fluid_handle_player_loop,
-        "player_loop num            Set loop number to num (-1 = loop forever)"
+        const_cast<char *>("player_loop"), const_cast<char *>("player"), fluid_handle_player_loop,
+        const_cast<char *>("player_loop num            Set loop number to num (-1 = loop forever)")
     },
     {
-        "player_tempo_bpm", "player", fluid_handle_player_tempo_bpm,
-        "player_tempo_bpm num       Set tempo to num beats per minute"
+        const_cast<char *>("player_tempo_bpm"), const_cast<char *>("player"), fluid_handle_player_tempo_bpm,
+        const_cast<char *>("player_tempo_bpm num       Set tempo to num beats per minute")
     },
     {
-        "player_tempo_int", "player", fluid_handle_player_tempo_int,
-        "player_tempo_int [mul]     Set internal tempo multiplied by mul (default mul=1.0)"
+        const_cast<char *>("player_tempo_int"), const_cast<char *>("player"), fluid_handle_player_tempo_int,
+        const_cast<char *>("player_tempo_int [mul]     Set internal tempo multiplied by mul (default mul=1.0)")
     },
 #if WITH_PROFILING
     /* Profiling commands */
     {
-        "profile", "profile", fluid_handle_profile,
-        "profile                        Prints default parameters used by prof_start"
+        const_cast<char *>("profile"), const_cast<char *>("profile"), fluid_handle_profile,
+        const_cast<char *>("profile                        Prints default parameters used by prof_start")
     },
     {
-        "prof_set_notes", "profile",  fluid_handle_prof_set_notes,
-        "prof_set_notes nbr [bank prog] Sets notes number generated by prof_start"
+        const_cast<char *>("prof_set_notes"), const_cast<char *>("profile"),  fluid_handle_prof_set_notes,
+        const_cast<char *>("prof_set_notes nbr [bank prog] Sets notes number generated by prof_start")
     },
     {
-        "prof_set_print", "profile",  fluid_handle_prof_set_print,
-        "prof_set_print mode            Sets print mode (0:simple, 1:full infos)"
+        const_cast<char *>("prof_set_print"), const_cast<char *>("profile"),  fluid_handle_prof_set_print,
+        const_cast<char *>("prof_set_print mode            Sets print mode (0:simple, 1:full infos)")
     },
     {
-        "prof_start", "profile",      fluid_handle_prof_start,
-        "prof_start [n_prof [dur]]      Starts n_prof measures of duration(ms) each"
+        const_cast<char *>("prof_start"), const_cast<char *>("profile"),      fluid_handle_prof_start,
+        const_cast<char *>("prof_start [n_prof [dur]]      Starts n_prof measures of duration(ms) each")
     }
 #endif
 };
@@ -2401,7 +2401,7 @@ fluid_handle_help(void *data, int ac, char **av, fluid_ostream_t out)
      * - help (topic), where (topic) is 'general', 'chorus', etc.
      * - help all
      */
-    char *topic = "help"; /* default, if no topic is given */
+    char *topic = const_cast<char *>("help"); /* default, if no topic is given */
     int count = 0;
     unsigned int i;
 
@@ -3720,7 +3720,7 @@ int fluid_handle_player_tempo_cde(void *data, int ac, char **av, fluid_ostream_t
         double min;
         double max;
         char *name;
-    }argument[2] = {{0.1F, 10.F, "multiplier"}, {1.0F, 600.0F, "bpm"}};
+    }argument[2] = {{0.1F, 10.F, const_cast<char *>("multiplier")}, {1.0F, 600.0F, const_cast<char *>("bpm")}};
 
     /* get argument for: player_tempo_int [mul],  player_tempo_bpm bpm */
     if((cmd == FLUID_PLAYER_TEMPO_EXTERNAL_BPM) || ac)

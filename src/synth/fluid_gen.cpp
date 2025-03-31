@@ -23,7 +23,7 @@
 #include "fluid_chan.h"
 
 
-#define _GEN(_name) GEN_ ## _name, #_name
+#define _GEN(_name) GEN_ ## _name, const_cast<char *>(#_name)
 
 
 /* See SFSpec21 $8.1.3 */

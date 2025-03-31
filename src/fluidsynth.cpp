@@ -537,13 +537,13 @@ int main(int argc, char **argv)
             if(FLUID_STRCMP(optarg, "help") == 0)
             {
                 printf("-a options (audio driver):\n   ");
-                show_settings_str_options(settings, "audio.driver");
+                show_settings_str_options(settings, const_cast<char *>("audio.driver"));
                 result = 0;
                 goto cleanup;
             }
             else
             {
-                if(fluid_settings_setstr(settings, "audio.driver", optarg) != FLUID_OK)
+                if(fluid_settings_setstr(settings, const_cast<char *>("audio.driver"), optarg) != FLUID_OK)
                 {
                     goto cleanup;
                 }
@@ -578,7 +578,7 @@ int main(int argc, char **argv)
             if(FLUID_STRCMP(optarg, "help") == 0)
             {
                 printf("-E options (audio file byte order):\n   ");
-                show_settings_str_options(settings, "audio.file.endian");
+                show_settings_str_options(settings, const_cast<char *>("audio.file.endian"));
 
 #if LIBSNDFILE_SUPPORT
                 printf("\nauto: Use audio file format's default endian byte order\n"
@@ -664,7 +664,7 @@ int main(int argc, char **argv)
             if(FLUID_STRCMP(optarg, "help") == 0)
             {
                 printf("-m options (MIDI driver):\n   ");
-                show_settings_str_options(settings, "midi.driver");
+                show_settings_str_options(settings, const_cast<char *>("midi.driver"));
                 result = 0;
                 goto cleanup;
             }
@@ -686,7 +686,7 @@ int main(int argc, char **argv)
             if(FLUID_STRCMP(optarg, "help") == 0)
             {
                 printf("-O options (audio file format):\n   ");
-                show_settings_str_options(settings, "audio.file.format");
+                show_settings_str_options(settings, const_cast<char *>("audio.file.format"));
 
 #if LIBSNDFILE_SUPPORT
                 printf("\ns8, s16, s24, s32: Signed PCM audio of the given number of bits\n");
@@ -774,7 +774,7 @@ int main(int argc, char **argv)
             if(FLUID_STRCMP(optarg, "help") == 0)
             {
                 printf("-T options (audio file type):\n   ");
-                show_settings_str_options(settings, "audio.file.type");
+                show_settings_str_options(settings, const_cast<char *>("audio.file.type"));
 
 #if LIBSNDFILE_SUPPORT
                 printf("\nauto: Determine type from file name extension, defaults to \"wav\"\n");

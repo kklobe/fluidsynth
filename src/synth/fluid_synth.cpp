@@ -280,7 +280,7 @@ void fluid_version(int *major, int *minor, int *micro)
 char *
 fluid_version_str(void)
 {
-    return FLUIDSYNTH_VERSION;
+    return const_cast<char *>(FLUIDSYNTH_VERSION);
 }
 
 /*
@@ -1466,7 +1466,7 @@ fluid_synth_add_default_mod(fluid_synth_t *synth, const fluid_mod_t *mod, int mo
     fluid_return_val_if_fail((mode == FLUID_SYNTH_ADD) || (mode == FLUID_SYNTH_OVERWRITE) , FLUID_FAILED);
 
     /* Checks if modulators sources are valid */
-    if(!fluid_mod_check_sources(mod, "api fluid_synth_add_default_mod mod"))
+    if(!fluid_mod_check_sources(mod, const_cast<char *>("api fluid_synth_add_default_mod mod")))
     {
         return FLUID_FAILED;
     }

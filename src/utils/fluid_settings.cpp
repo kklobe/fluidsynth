@@ -353,7 +353,7 @@ fluid_settings_tokenize(const char *s, char *buf, char **ptr)
     FLUID_STRCPY(buf, s);	/* copy string to buffer, since it gets modified */
     tokstr = buf;
 
-    while((tok = fluid_strtok(&tokstr, ".")))
+    while((tok = fluid_strtok(&tokstr, const_cast<char *>("."))))
     {
         if(n >= MAX_SETTINGS_TOKENS)
         {
@@ -1989,7 +1989,7 @@ int fluid_settings_split_csv(const char *str, int *buf, int buf_len)
         return -1;
     }
 
-    while((tok = fluid_strtok(&tokstr, ",")) && n < buf_len)
+    while((tok = fluid_strtok(&tokstr, const_cast<char *>(","))) && n < buf_len)
     {
         buf[n++] = atoi(tok);
     }

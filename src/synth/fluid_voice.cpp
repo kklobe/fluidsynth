@@ -1483,7 +1483,7 @@ void
 fluid_voice_add_mod(fluid_voice_t *voice, fluid_mod_t *mod, int mode)
 {
     /* Ignore the modulator if its sources inputs are invalid */
-    if(fluid_mod_check_sources(mod, "api fluid_voice_add_mod mod"))
+    if(fluid_mod_check_sources(mod, const_cast<char *>("api fluid_voice_add_mod mod")))
     {
         fluid_voice_add_mod_local(voice, mod, mode, FLUID_NUM_MOD);
     }
