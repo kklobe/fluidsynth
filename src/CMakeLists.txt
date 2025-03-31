@@ -22,55 +22,55 @@
 # ************ library ************
 
 if ( PULSE_SUPPORT )
-  set ( fluid_pulse_SOURCES drivers/fluid_pulse.c )
+  set ( fluid_pulse_SOURCES drivers/fluid_pulse.cpp )
 endif ( PULSE_SUPPORT )
 
 if ( ALSA_SUPPORT )
-  set ( fluid_alsa_SOURCES drivers/fluid_alsa.c )
+  set ( fluid_alsa_SOURCES drivers/fluid_alsa.cpp )
 endif ( ALSA_SUPPORT )
 
 if ( COREAUDIO_SUPPORT )
-  set ( fluid_coreaudio_SOURCES drivers/fluid_coreaudio.c )
+  set ( fluid_coreaudio_SOURCES drivers/fluid_coreaudio.cpp )
 endif ( COREAUDIO_SUPPORT )
 
 if ( COREMIDI_SUPPORT )
-  set ( fluid_coremidi_SOURCES drivers/fluid_coremidi.c )
+  set ( fluid_coremidi_SOURCES drivers/fluid_coremidi.cpp )
 endif ( COREMIDI_SUPPORT )
 
 if ( DBUS_SUPPORT )
-  set ( fluid_dbus_SOURCES bindings/fluid_rtkit.c bindings/fluid_rtkit.h )
+  set ( fluid_dbus_SOURCES bindings/fluid_rtkit.cpp bindings/fluid_rtkit.h )
 endif ( DBUS_SUPPORT )
 
 if ( JACK_SUPPORT )
-  set ( fluid_jack_SOURCES drivers/fluid_jack.c )
+  set ( fluid_jack_SOURCES drivers/fluid_jack.cpp )
 endif ( JACK_SUPPORT )
 
 if ( PIPEWIRE_SUPPORT )
-  set ( fluid_pipewire_SOURCES drivers/fluid_pipewire.c )
+  set ( fluid_pipewire_SOURCES drivers/fluid_pipewire.cpp )
 endif ( PIPEWIRE_SUPPORT )
 
 if ( PORTAUDIO_SUPPORT )
-  set ( fluid_portaudio_SOURCES drivers/fluid_portaudio.c )
+  set ( fluid_portaudio_SOURCES drivers/fluid_portaudio.cpp )
 endif ( PORTAUDIO_SUPPORT )
 
 if ( DSOUND_SUPPORT )
-  set ( fluid_dsound_SOURCES drivers/fluid_dsound.c )
+  set ( fluid_dsound_SOURCES drivers/fluid_dsound.cpp )
 endif ( DSOUND_SUPPORT )
 
 if ( WASAPI_SUPPORT )
-  set ( fluid_wasapi_SOURCES drivers/fluid_wasapi.c )
+  set ( fluid_wasapi_SOURCES drivers/fluid_wasapi.cpp )
 endif ( WASAPI_SUPPORT )
 
 if ( WAVEOUT_SUPPORT )
-  set ( fluid_waveout_SOURCES drivers/fluid_waveout.c )
+  set ( fluid_waveout_SOURCES drivers/fluid_waveout.cpp )
 endif ( WAVEOUT_SUPPORT )
 
 if ( WINMIDI_SUPPORT )
-  set ( fluid_winmidi_SOURCES drivers/fluid_winmidi.c )
+  set ( fluid_winmidi_SOURCES drivers/fluid_winmidi.cpp )
 endif ( WINMIDI_SUPPORT )
 
 if ( SDL2_SUPPORT )
-  set ( fluid_sdl2_SOURCES drivers/fluid_sdl2.c )
+  set ( fluid_sdl2_SOURCES drivers/fluid_sdl2.cpp )
 endif ( SDL2_SUPPORT )
 
 if ( SDL3_SUPPORT )
@@ -78,31 +78,31 @@ if ( SDL3_SUPPORT )
 endif ( SDL3_SUPPORT )
 
 if ( OSS_SUPPORT )
-  set ( fluid_oss_SOURCES drivers/fluid_oss.c )
+  set ( fluid_oss_SOURCES drivers/fluid_oss.cpp )
 endif ( OSS_SUPPORT )
 
 if ( DART_SUPPORT )
-  set ( fluid_dart_SOURCES drivers/fluid_dart.c )
+  set ( fluid_dart_SOURCES drivers/fluid_dart.cpp )
 endif ( DART_SUPPORT )
 
 if ( KAI_SUPPORT )
-  set ( fluid_kai_SOURCES drivers/fluid_kai.c )
+  set ( fluid_kai_SOURCES drivers/fluid_kai.cpp )
 endif ( KAI_SUPPORT )
 
 if ( MIDISHARE_SUPPORT )
-  set ( fluid_midishare_SOURCES drivers/fluid_midishare.c )
+  set ( fluid_midishare_SOURCES drivers/fluid_midishare.cpp )
 endif ( MIDISHARE_SUPPORT )
 
 if ( AUFILE_SUPPORT )
-  set ( fluid_aufile_SOURCES drivers/fluid_aufile.c )
+  set ( fluid_aufile_SOURCES drivers/fluid_aufile.cpp )
 endif ( AUFILE_SUPPORT )
 
 if ( LIBINSTPATCH_SUPPORT )
-  set ( fluid_libinstpatch_SOURCES sfloader/fluid_instpatch.c sfloader/fluid_instpatch.h )
+  set ( fluid_libinstpatch_SOURCES sfloader/fluid_instpatch.cpp sfloader/fluid_instpatch.h )
 endif ( LIBINSTPATCH_SUPPORT )
 
 if ( OPENSLES_SUPPORT )
-  set ( fluid_opensles_SOURCES drivers/fluid_opensles.c )
+  set ( fluid_opensles_SOURCES drivers/fluid_opensles.cpp )
 endif ( OPENSLES_SUPPORT )
 
 if ( OBOE_SUPPORT )
@@ -112,77 +112,76 @@ endif ( OBOE_SUPPORT )
 set ( config_SOURCES ${FluidSynth_BINARY_DIR}/config.h )
 
 set ( libfluidsynth_SOURCES
-    utils/fluid_conv.c
+    utils/fluid_conv.cpp
     utils/fluid_conv.h
-    utils/fluid_hash.c
+    utils/fluid_hash.cpp
     utils/fluid_hash.h
-    utils/fluid_list.c
+    utils/fluid_list.cpp
     utils/fluid_list.h
-    utils/fluid_ringbuffer.c
+    utils/fluid_ringbuffer.cpp
     utils/fluid_ringbuffer.h
-    utils/fluid_settings.c
+    utils/fluid_settings.cpp
     utils/fluid_settings.h
     utils/fluidsynth_priv.h
-    utils/fluid_sys.c
-    utils/fluid_sys.h
-    sfloader/fluid_defsfont.c
+        utils/fluid_sys.cpp
+        utils/fluid_sys.h
+    sfloader/fluid_defsfont.cpp
     sfloader/fluid_defsfont.h
     sfloader/fluid_sfont.h
-    sfloader/fluid_sfont.c
-    sfloader/fluid_sffile.c
+    sfloader/fluid_sfont.cpp
+    sfloader/fluid_sffile.cpp
     sfloader/fluid_sffile.h
-    sfloader/fluid_samplecache.c
+    sfloader/fluid_samplecache.cpp
     sfloader/fluid_samplecache.h
-    rvoice/fluid_adsr_env.c
+    rvoice/fluid_adsr_env.cpp
     rvoice/fluid_adsr_env.h
-    rvoice/fluid_chorus.c
+    rvoice/fluid_chorus.cpp
     rvoice/fluid_chorus.h
     rvoice/fluid_iir_filter.cpp
-    rvoice/fluid_iir_filter.c
     rvoice/fluid_iir_filter.h
-    rvoice/fluid_lfo.c
+    rvoice/fluid_lfo.cpp
     rvoice/fluid_lfo.h
     rvoice/fluid_rvoice.h
-    rvoice/fluid_rvoice.c
+    rvoice/fluid_rvoice.cpp
     rvoice/fluid_rvoice_dsp.cpp
     rvoice/fluid_rvoice_event.h
-    rvoice/fluid_rvoice_event.c
+    rvoice/fluid_rvoice_event.cpp
     rvoice/fluid_rvoice_mixer.h
-    rvoice/fluid_rvoice_mixer.c
+    rvoice/fluid_rvoice_mixer.cpp
     rvoice/fluid_phase.h
-    rvoice/fluid_rev.c
+    rvoice/fluid_rev.cpp
     rvoice/fluid_rev.h
-    synth/fluid_chan.c
+    synth/fluid_chan.cpp
     synth/fluid_chan.h
-    synth/fluid_event.c
+    synth/fluid_event.cpp
     synth/fluid_event.h
-    synth/fluid_gen.c
+    synth/fluid_gen.cpp
     synth/fluid_gen.h
-    synth/fluid_mod.c
+    synth/fluid_mod.cpp
     synth/fluid_mod.h
-    synth/fluid_synth.c
+    synth/fluid_synth.cpp
     synth/fluid_synth.h
-    synth/fluid_synth_monopoly.c
-    synth/fluid_tuning.c
+    synth/fluid_synth_monopoly.cpp
+    synth/fluid_tuning.cpp
     synth/fluid_tuning.h
-    synth/fluid_voice.c
+    synth/fluid_voice.cpp
     synth/fluid_voice.h
-    midi/fluid_midi.c
+    midi/fluid_midi.cpp
     midi/fluid_midi.h
-    midi/fluid_midi_router.c
+    midi/fluid_midi_router.cpp
     midi/fluid_midi_router.h
-    midi/fluid_seqbind.c
+    midi/fluid_seqbind.cpp
     midi/fluid_seqbind_notes.cpp
-    midi/fluid_seq.c
+    midi/fluid_seq.cpp
     midi/fluid_seq_queue.cpp
-    drivers/fluid_adriver.c
+    drivers/fluid_adriver.cpp
     drivers/fluid_adriver.h
-    drivers/fluid_mdriver.c
+    drivers/fluid_mdriver.cpp
     drivers/fluid_mdriver.h
-    bindings/fluid_cmd.c
+    bindings/fluid_cmd.cpp
     bindings/fluid_cmd.h
-    bindings/fluid_filerenderer.c
-    bindings/fluid_ladspa.c
+    bindings/fluid_filerenderer.cpp
+    bindings/fluid_ladspa.cpp
     bindings/fluid_ladspa.h
 )
 if ( CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU" )
@@ -448,10 +447,10 @@ target_link_libraries ( libfluidsynth PRIVATE libfluidsynth-OBJ )
 
 # ************ CLI program ************
 
-set ( fluidsynth_SOURCES fluidsynth.c )
+set ( fluidsynth_SOURCES fluidsynth.cpp )
 
 if ( WASAPI_SUPPORT )
-  set ( fluidsynth_SOURCES ${fluidsynth_SOURCES} fluid_wasapi_device_enumerate.c )
+  set ( fluidsynth_SOURCES ${fluidsynth_SOURCES} fluid_wasapi_device_enumerate.cpp )
 endif ( WASAPI_SUPPORT )
 
 if ( WIN32 )

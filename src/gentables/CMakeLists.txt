@@ -10,7 +10,7 @@ set(ENV{CFLAGS} "$ENV{CFLAGS_FOR_BUILD} $ENV{CPPFLAGS_FOR_BUILD}")
 
 set(ENV{LDFLAGS} "$ENV{LDFLAGS_FOR_BUILD}")
 
-project (gentables C)
+project (gentables CXX)
 
 set ( CMAKE_BUILD_TYPE Debug )
 
@@ -23,9 +23,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR})
 
 # Add the executable that generates the table
 add_executable( make_tables
-                make_tables.c
-                gen_conv.c
-                gen_rvoice_dsp.c)
+                make_tables.cpp
+                gen_conv.cpp
+                gen_rvoice_dsp.cpp)
 
 target_include_directories( make_tables PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../ )
 

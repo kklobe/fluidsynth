@@ -42,15 +42,15 @@
 #include "fluidsynth_priv.h"
 
 #if HAVE_MATH_H
-#include <math.h>
+#include <cmath>
 #endif
 
 #if HAVE_ERRNO_H
-#include <errno.h>
+#include <cerrno>
 #endif
 
 #if HAVE_STDARG_H
-#include <stdarg.h>
+#include <cstdarg>
 #endif
 
 #if HAVE_UNISTD_H
@@ -94,7 +94,7 @@
 #endif
 
 #if HAVE_LIMITS_H
-#include <limits.h>
+#include <climits>
 #endif
 
 #if HAVE_OPENMP
@@ -106,12 +106,12 @@
 #endif
 
 #if HAVE_SIGNAL_H
-#include <signal.h>
+#include <csignal>
 #endif
 
 /** Integer types  */
 #if HAVE_STDINT_H
-#include <stdint.h>
+#include <cstdint>
 
 #else
 
@@ -493,7 +493,7 @@ typedef GModule fluid_module_t;
 
 /* Sockets and I/O */
 
-int fluid_istream_readline(fluid_istream_t in, fluid_ostream_t out, char *prompt, char *buf, int len);
+int fluid_istream_readline(fluid_istream_t in, fluid_ostream_t out, const char *prompt, char *buf, int len);
 int fluid_ostream_printf(fluid_ostream_t out, const char *format, ...);
 
 #if defined(_WIN32)

@@ -34,15 +34,15 @@
 #include <glib.h>
 
 #if HAVE_STDLIB_H
-#include <stdlib.h> // malloc, free
+#include <cstdlib> // malloc, free
 #endif
 
 #if HAVE_STDIO_H
-#include <stdio.h> // printf
+#include <cstdio> // printf
 #endif
 
 #if HAVE_STRING_H
-#include <string.h>
+#include <cstring>
 #endif
 
 #if HAVE_STRINGS_H
@@ -192,9 +192,9 @@ typedef void (*fluid_rvoice_function_t)(void *obj, const fluid_rvoice_param_t pa
 #define FLUID_FREE(_p)               fluid_free(_p)
 #define FLUID_NEW(_t)                (_t*)FLUID_MALLOC(sizeof(_t))
 #define FLUID_ARRAY_ALIGNED(_t,_n,_a) (_t*)FLUID_MALLOC((_n)*sizeof(_t) + ((unsigned int)_a - 1u))
-#define FLUID_ARRAY(_t,_n)           FLUID_ARRAY_ALIGNED(_t,_n,1u)
+#define FLUID_ARRAY(_t, _n) FLUID_ARRAY_ALIGNED(_t, _n, 1u)
 
-void* fluid_alloc(size_t len);
+void *fluid_alloc(size_t len);
 
 /* File access */
 #define FLUID_FOPEN(_f,_m)           fluid_fopen(_f,_m)
@@ -233,7 +233,7 @@ do { strncpy(_dst,_src,_n-1); \
 #ifdef strdup
 #define FLUID_STRDUP(s)          strdup(s)
 #else
-#define FLUID_STRDUP(s)          FLUID_STRCPY(FLUID_MALLOC(FLUID_STRLEN(s) + 1), s)
+#define FLUID_STRDUP(s)          FLUID_STRCPY(static_cast<char *>(FLUID_MALLOC(FLUID_STRLEN(s) + 1)), s)
 #endif
 
 #define FLUID_SPRINTF                sprintf

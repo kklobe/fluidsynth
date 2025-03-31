@@ -7,6 +7,8 @@ Makefile
 cmake_install.cmake
 install_manifest.txt
 
+cmake-build-*/
+
 # Object files
 *.o
 *.ko
@@ -40,3 +42,12 @@ install_manifest.txt
 # ProjectFiles
 *.pro.user*
 *.user
+
+# User local JetBrains configuration files
+.idea/
+.run/
+
+# IntelliJ project
+*.iml
+
+.DS_Store

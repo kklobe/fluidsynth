@@ -126,7 +126,7 @@ FLUIDSYNTH_API
 int fluid_settings_dupstr(fluid_settings_t *settings, const char *name, char **str);
 
 FLUIDSYNTH_API
-int fluid_settings_getstr_default(fluid_settings_t *settings, const char *name, char **def);
+int fluid_settings_getstr_default(fluid_settings_t *settings, const char *name, const char **def);
 
 FLUIDSYNTH_API
 int fluid_settings_str_equal(fluid_settings_t *settings, const char *name, const char *value);

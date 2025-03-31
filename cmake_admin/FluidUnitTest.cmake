@@ -1,5 +1,5 @@
 macro ( ADD_FLUID_TEST _test )
-    add_executable( ${_test} ${_test}.c )
+    add_executable( ${_test} ${_test}.cpp )
 
     # only build this unit test when explicitly requested by "make check"
     set_target_properties(${_test} PROPERTIES EXCLUDE_FROM_ALL TRUE)
@@ -28,7 +28,7 @@ macro ( ADD_FLUID_TEST _test )
 endmacro ( ADD_FLUID_TEST )
 
 macro ( ADD_FLUID_TEST_UTIL _util )
-    add_executable( ${_util} ${_util}.c )
+    add_executable( ${_util} ${_util}.cpp )
 
     # only build this unit test when explicitly requested by "make check"
     set_target_properties(${_util} PROPERTIES EXCLUDE_FROM_ALL TRUE)
@@ -79,7 +79,7 @@ macro ( ADD_FLUID_DEMO _demo )
     if ( ${ARGC} GREATER 1 )
         string( TOLOWER "${ARGV1}" _LANGEXT )
     else ()
-        set( _LANGEXT "c" )
+        set( _LANGEXT "cpp" )
     endif ()
 
     ADD_EXECUTABLE(${_demo} ${_demo}.${_LANGEXT} )

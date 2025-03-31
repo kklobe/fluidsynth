@@ -49,7 +49,7 @@ class OboeAudioStreamErrorCallback;
 struct fluid_oboe_audio_driver_t
 {
     fluid_audio_driver_t driver;
-    fluid_synth_t *synth = nullptr;
+    fluid_synth_t *synth = NULL;
     bool cont = false;
     std::unique_ptr<OboeAudioStreamCallback> oboe_callback;
     std::unique_ptr<OboeAudioStreamErrorCallback> oboe_error_callback;
@@ -209,7 +209,7 @@ fluid_oboe_connect_or_reconnect(fluid_oboe_audio_driver_t *dev)
 fluid_audio_driver_t *
 new_fluid_oboe_audio_driver(fluid_settings_t *settings, fluid_synth_t *synth)
 {
-    fluid_oboe_audio_driver_t *dev = nullptr;
+    fluid_oboe_audio_driver_t *dev = NULL;
 
     try
     {
@@ -268,20 +268,20 @@ new_fluid_oboe_audio_driver(fluid_settings_t *settings, fluid_synth_t *synth)
 
 error_recovery:
     delete_fluid_oboe_audio_driver(reinterpret_cast<fluid_audio_driver_t *>(dev));
-    return nullptr;
+    return NULL;
 }
 
 void delete_fluid_oboe_audio_driver(fluid_audio_driver_t *p)
 {
     fluid_oboe_audio_driver_t *dev = reinterpret_cast<fluid_oboe_audio_driver_t *>(p);
 
-    fluid_return_if_fail(dev != nullptr);
+    fluid_return_if_fail(dev != NULL);
 
     try
     {
         dev->cont = false;
 
-        if(dev->stream != nullptr)
+        if(dev->stream != NULL)
         {
             dev->stream->stop();
             dev->stream->close();
